@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: price-aggregator-config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ViktorPyrih/marketplace-config
+          clone-on-start: true
+          search-paths: configuration
+          default-label: master
+  security:
+    user:
+      name: config-service-client
+      password: ENC(Sqk8G6SWFJmg4i9kZ8syLS9j58DnLVmtq6o5hYGwMHw3MLraLpD+JlMqG/CrjWL8YESF1aRPyuTi7d+N+MQvPw==)
+      roles: CLIENT
+server:
+  port: 8888
